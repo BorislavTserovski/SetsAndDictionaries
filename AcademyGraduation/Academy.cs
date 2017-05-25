@@ -23,7 +23,7 @@ namespace AcademyGraduation
                     List<double> grades = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                         .Select(double.Parse).ToList();
                     st.Grades = grades;
-                    st.Grade = grades.Sum() / grades.Count;
+                    st.Grade = grades.Average();
                 }
                 students.Add(st);
             }
