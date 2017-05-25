@@ -15,17 +15,17 @@ namespace AcademyGraduation
 
             for (int i = 0; i < numberOfStudents; i++)
             {
-                Student st = new Student();
+                Student currentStudent = new Student();
                 string name = Console.ReadLine();
-                st.Name = name;
+                currentStudent.Name = name;
                 for (int j = 0; j < 1; j++)
                 {
                     List<double> grades = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                         .Select(double.Parse).ToList();
-                    st.Grades = grades;
-                    st.Grade = grades.Average();
+                    currentStudent.Grades = grades;
+                    currentStudent.Grade = grades.Average();
                 }
-                students.Add(st);
+                students.Add(currentStudent);
             }
             foreach (var student in students.OrderBy(s=>s.Name))
             {
